@@ -13,8 +13,14 @@
     
     <!-- Sidebar / Navegación Lateral -->
     <aside class="sidebar">
-        <div>
-            <h2 class="brand-title">Control Escolar</h2>
+        
+        <!-- Bloque Superior: Logo, Título y Menú -->
+        <div class="sidebar-top">
+            <div class="brand-container">
+                <img src="../Recursos/logo.png" alt="Logo UDM" class="brand-logo">
+                <h2 class="brand-title">Control Escolar</h2>
+            </div>
+            
             <nav>
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -30,10 +36,11 @@
             </nav>
         </div>
 
-        <div>
-            <!-- Botón de salida saliendo de HTML y entrando a PHP -->
+        <!-- Bloque Inferior: Botón de Cerrar Sesión -->
+        <div class="sidebar-bottom">
             <a href="../PHP/logout.php" class="btn-logout">Cerrar Sesión</a>
         </div>
+
     </aside>
 
     <!-- Contenido Principal del Docente -->
@@ -46,7 +53,6 @@
             </div>
             
             <div class="user-info">
-                <!-- Se inyectarán dinámicamente desde el controlador PHP -->
                 <span style="font-weight: 500;" id="nombre-usuario"><?php echo htmlspecialchars($nombre ?? 'Profesor'); ?></span>
                 <span class="role-badge" id="rol-usuario"><?php echo htmlspecialchars($rol ?? 'docente'); ?></span>
             </div>

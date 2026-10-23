@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Alumno - Control Escolar</title>
+    <!-- Enlace al archivo CSS específico para este módulo -->
     <link rel="stylesheet" href="../CSS/inicioAlumno.css">
 </head>
 <body>
@@ -12,26 +13,40 @@
     
     <!-- Sidebar / Navegación Lateral -->
     <aside class="sidebar">
-        <div>
-            <h2 class="brand-title">Control Escolar</h2>
+        
+        <!-- Bloque Superior: Logo, Título y Menú -->
+        <div class="sidebar-top">
+            <div class="brand-container">
+                <img src="../Recursos/logo.png" alt="Logo UDM" class="brand-logo">
+                <h2 class="brand-title">Control Escolar</h2>
+            </div>
+            
             <nav>
                 <ul class="nav-list">
                     <li class="nav-item">
                         <a href="inicioAlumno.php" class="nav-link active">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="calificaciones.php" class="nav-link">Mis Calificaciones</a>
+                        <a href="inscripciones.php" class="nav-link">Inscripciones</a>
                     </li>
                     <li class="nav-item">
-                        <a href="horario.php" class="nav-link">Horario de Clases</a>
+                        <a href="calificaciones.php" class="nav-link">Calificaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="horarios.php" class="nav-link">Horarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="adeudos.php" class="nav-link">Estado de Cuenta</a>
                     </li>
                 </ul>
             </nav>
         </div>
 
-        <div>
+        <!-- Bloque Inferior: Botón de Cerrar Sesión -->
+        <div class="sidebar-bottom">
             <a href="../PHP/logout.php" class="btn-logout">Cerrar Sesión</a>
         </div>
+
     </aside>
 
     <!-- Contenido Principal del Alumno -->
@@ -39,20 +54,27 @@
         
         <header class="top-bar">
             <div>
-                <h1>Portal del Estudiante</h1>
-                <p style="color: var(--text-secondary); margin-top: 4px;">Bienvenid@ de nuevo</p>
+                <h1>Portal del Alumno</h1>
+                <p style="color: var(--text-secondary); margin-top: 4px;">Bienvenido a tu panel académico</p>
             </div>
             
             <div class="user-info">
-                <span style="font-weight: 500;" id="nombre-usuario"><?php echo htmlspecialchars($nombre ?? 'Estudiante'); ?></span>
+                <span style="font-weight: 500;" id="nombre-usuario"><?php echo htmlspecialchars($nombre ?? 'Alumno'); ?></span>
                 <span class="role-badge" id="rol-usuario"><?php echo htmlspecialchars($rol ?? 'alumno'); ?></span>
             </div>
         </header>
 
-        <!-- Tarjetas Informativas basadas en la Base de Datos -->
+        <!-- Tarjetas Informativas / Resumen para Alumnos -->
         <section>
             <div class="grid-cards">
                 
+                <article class="card">
+                    <h3>Carrera Actual</h3>
+                    <p style="font-size: 1.25rem; font-weight: 600; color: var(--primary-brand); margin-top: 8px;">
+                        <?php echo htmlspecialchars($carrera ?? 'Sin carrera asignada'); ?>
+                    </p>
+                </article>
+
                 <article class="card">
                     <h3>Créditos Acumulados</h3>
                     <p style="font-size: 2rem; font-weight: bold; color: var(--primary-brand); margin-top: 8px;">
@@ -61,16 +83,9 @@
                 </article>
 
                 <article class="card">
-                    <h3>Carrera</h3>
-                    <p style="font-size: 1.1rem; margin-top: 12px; font-weight: 500;">
-                        <?php echo htmlspecialchars($carrera ?? 'Sin Asignar'); ?>
-                    </p>
-                </article>
-
-                <article class="card">
-                    <h3>Estatus Académico</h3>
+                    <h3>Estatus Escolar</h3>
                     <p style="color: var(--state-success); font-weight: 600; margin-top: 8px;">
-                        Alumno Regular
+                        Activo / Regular
                     </p>
                 </article>
 
