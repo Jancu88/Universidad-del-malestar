@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Administrativo - Control Escolar</title>
+    <!-- Enlace al archivo CSS específico para este módulo -->
+    <link rel="stylesheet" href="../CSS/inicioAdmin.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- Sidebar / Navegación Lateral -->
+    <aside class="sidebar">
+        <div>
+            <h2 class="brand-title">Control Escolar</h2>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="inicioAdmin.php" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gestionarAlumnos.php" class="nav-link">Alumnos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gestionarDocentes.php" class="nav-link">Docentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="periodos.php" class="nav-link">Periodos Escolares</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div>
+            <!-- Botón de salida saliendo de HTML y entrando a PHP -->
+            <a href="../PHP/logout.php" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <!-- Contenido Principal del Administrador -->
+    <main class="main-content">
+        
+        <header class="top-bar">
+            <div>
+                <h1>Portal Administrativo</h1>
+                <p style="color: var(--text-secondary); margin-top: 4px;">Panel general de control del sistema</p>
+            </div>
+            
+            <div class="user-info">
+                <!-- Se inyectarán dinámicamente desde el controlador PHP -->
+                <span style="font-weight: 500;" id="nombre-usuario"><?php echo htmlspecialchars($nombre ?? 'Administrador'); ?></span>
+                <span class="role-badge" id="rol-usuario"><?php echo htmlspecialchars($rol ?? 'administrativo'); ?></span>
+            </div>
+        </header>
+
+        <!-- Tarjetas Informativas / Estadísticas Generales -->
+        <section>
+            <div class="grid-cards">
+                
+                <article class="card">
+                    <h3>Total de Alumnos</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--primary-brand); margin-top: 8px;">
+                        <?php echo htmlspecialchars($totalAlumnos ?? '0'); ?>
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Total de Docentes</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--primary-brand); margin-top: 8px;">
+                        <?php echo htmlspecialchars($totalDocentes ?? '0'); ?>
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Carreras Registradas</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--primary-brand); margin-top: 8px;">
+                        <?php echo htmlspecialchars($totalCarreras ?? '0'); ?>
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

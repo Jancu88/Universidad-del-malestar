@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Alumno - Control Escolar</title>
+    <link rel="stylesheet" href="../CSS/inicioAlumno.css">
+</head>
+<body>
+
+<div class="dashboard-layout">
+    
+    <!-- Sidebar / Navegación Lateral -->
+    <aside class="sidebar">
+        <div>
+            <h2 class="brand-title">Control Escolar</h2>
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="inicioAlumno.php" class="nav-link active">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="calificaciones.php" class="nav-link">Mis Calificaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="horario.php" class="nav-link">Horario de Clases</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div>
+            <a href="../PHP/logout.php" class="btn-logout">Cerrar Sesión</a>
+        </div>
+    </aside>
+
+    <!-- Contenido Principal del Alumno -->
+    <main class="main-content">
+        
+        <header class="top-bar">
+            <div>
+                <h1>Portal del Estudiante</h1>
+                <p style="color: var(--text-secondary); margin-top: 4px;">Bienvenid@ de nuevo</p>
+            </div>
+            
+            <div class="user-info">
+                <span style="font-weight: 500;" id="nombre-usuario"><?php echo htmlspecialchars($nombre ?? 'Estudiante'); ?></span>
+                <span class="role-badge" id="rol-usuario"><?php echo htmlspecialchars($rol ?? 'alumno'); ?></span>
+            </div>
+        </header>
+
+        <!-- Tarjetas Informativas basadas en la Base de Datos -->
+        <section>
+            <div class="grid-cards">
+                
+                <article class="card">
+                    <h3>Créditos Acumulados</h3>
+                    <p style="font-size: 2rem; font-weight: bold; color: var(--primary-brand); margin-top: 8px;">
+                        <?php echo htmlspecialchars($creditos ?? '0'); ?>
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Carrera</h3>
+                    <p style="font-size: 1.1rem; margin-top: 12px; font-weight: 500;">
+                        <?php echo htmlspecialchars($carrera ?? 'Sin Asignar'); ?>
+                    </p>
+                </article>
+
+                <article class="card">
+                    <h3>Estatus Académico</h3>
+                    <p style="color: var(--state-success); font-weight: 600; margin-top: 8px;">
+                        Alumno Regular
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>
