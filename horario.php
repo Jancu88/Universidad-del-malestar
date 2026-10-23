@@ -4,7 +4,7 @@ require_once 'conexion.php';
 
 // Obtener el ID del profesor autenticado (por defecto 1 para pruebas)
 $id_profesor = $_SESSION['id_profesor'] ?? 1;
-
+ 
 // Consulta para obtener los horarios exclusivos del profesor logueado
 $query_horarios = $pdo->prepare("
     SELECT 

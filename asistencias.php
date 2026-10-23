@@ -77,4 +77,4 @@ if ($asignacion_seleccionada) {
 
 // Cargar la vista HTML separada
 include 'asistencias.html';
-?>
+?> 

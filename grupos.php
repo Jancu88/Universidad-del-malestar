@@ -3,7 +3,7 @@ session_start();
 require_once 'conexion.php';
 
 $id_profesor = $_SESSION['id_profesor'] ?? 1;
-
+ 
 // Consulta para obtener los grupos asignados al profesor
 $query_grupos = $pdo->prepare("
     SELECT 

@@ -7,7 +7,7 @@ require_once 'conexion.php';
 // Temporalmente se utiliza el ID 1 si todavía no existe una sesión.
 // Cuando tu compañera termine login.php, se debe exigir la sesión real.
 $id_profesor = $_SESSION['id_profesor'] ?? 1;
-
+ 
 // 2. Obtener la información del profesor
 $stmt_prof = $pdo->prepare("
     SELECT *
