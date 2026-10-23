@@ -14,10 +14,10 @@
     <!-- Sidebar / Navegación Lateral -->
     <aside class="sidebar">
         
-        <!-- Bloque Superior: Logo, Título y Menú -->
+        <!-- Bloque Superior: Logo, Título y Menú Principal -->
         <div class="sidebar-top">
             <div class="brand-container">
-                <img src="../Recursos/logo.png" alt="Logo UDM" class="brand-logo">
+                <img src="../Recursos/tu_imagen.jpg" alt="Logo UDM" class="brand-logo">
                 <h2 class="brand-title">Control Escolar</h2>
             </div>
             
@@ -27,21 +27,50 @@
                         <a href="inicioAdmin.php" class="nav-link active">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a href="gestionarAlumnos.php" class="nav-link">Alumnos</a>
+                        <a href="alumnosAdmin.php" class="nav-link">Alumnos</a>
                     </li>
                     <li class="nav-item">
-                        <a href="gestionarDocentes.php" class="nav-link">Docentes</a>
+                        <a href="profesoresAdmin.php" class="nav-link">Profesores</a>
                     </li>
                     <li class="nav-item">
-                        <a href="periodos.php" class="nav-link">Periodos Escolares</a>
+                        <a href="carrerasMateriasAdmin.php" class="nav-link">Carreras y materias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="periodosAdmin.php" class="nav-link">Periodos escolares</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="gruposAsignacionesAdmin.php" class="nav-link">Grupos y asignaciones</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="horariosAulasAdmin.php" class="nav-link">Horarios y aulas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="controlEscolarAdmin.php" class="nav-link">Control escolar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="finanzasAdmin.php" class="nav-link">Finanzas y adeudos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="bitacoraAdmin.php" class="nav-link">Bitácora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="reportesAdmin.php" class="nav-link">Reportes</a>
                     </li>
                 </ul>
             </nav>
         </div>
 
-        <!-- Bloque Inferior: Botón de Cerrar Sesión -->
+        <!-- Bloque Inferior: Mi perfil, Seguridad y Cerrar Sesión -->
         <div class="sidebar-bottom">
-            <a href="../PHP/logout.php" class="btn-logout">Cerrar Sesión</a>
+            <ul class="nav-list" style="margin-bottom: 12px;">
+                <li class="nav-item">
+                    <a href="perfilAdmin.php" class="nav-link">Mi perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a href="seguridadAdmin.php" class="nav-link">Seguridad</a>
+                </li>
+            </ul>
+            <a href="../PHP/logout.php" class="btn-logout">Cerrar sesión</a>
         </div>
 
     </aside>
